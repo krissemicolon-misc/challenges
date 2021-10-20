@@ -9,7 +9,6 @@ int myAtoi(char *s){
     long long int num = 0;
     int nums[128];
     int nums_len = 0;
-    int offset = 0;
     short sign_count = 0;
     short parsed_count = 0;
     bool negative = false;
@@ -150,7 +149,9 @@ int myAtoi(char *s){
         num += nums[i] * ((long long int)pow(10, nums_len));
     }
     
-    num = (negative) ? num *= -1 : num;
+    if(negative) {
+        num *= -1;
+    }
     num = (num >= INT_UPPER_BOUND) ? INT_UPPER_BOUND - 1 : num;
     num = (num <= INT_LOWER_BOUND) ? INT_LOWER_BOUND : num;
     
