@@ -9,7 +9,7 @@ int reverse(int x){
         }
         x *= -1;
     }
-    char xstr[52];
+    char xstr[12];
     sprintf(xstr, "%i", x);
     int len = strlen(xstr);
     
